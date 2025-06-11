@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atoms - HPB Design System</title>
+    <meta name="description" content="Fundamental design atoms including colors, typography, icons, and basic elements.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- LineIcons CDN -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hpb-primary': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        'hpb-secondary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        }
+                    },
+                    fontFamily: {
+                        'primary': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/health-promotion-board-logo-hd.png" alt="HPB Logo" class="h-8 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">HPB Design System</h1>
+                        <p class="text-xs text-gray-500">Modern Health Design</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link">Overview</a>
+                    <a href="atoms.html" class="nav-link active">Atoms</a>
+                    <a href="molecules.html" class="nav-link">Molecules</a>
+                    <a href="organisms.html" class="nav-link">Organisms</a>
+                    <a href="layout.html" class="nav-link">Layout</a>
+                    <a href="tokens.html" class="nav-link">Design Tokens</a>
+                    <a href="accessibility.html" class="nav-link">Accessibility</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i class="lni-menu text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="nav-link">Overview</a>
+                    <a href="atoms.html" class="nav-link active">Atoms</a>
+                    <a href="molecules.html" class="nav-link">Molecules</a>
+                    <a href="organisms.html" class="nav-link">Organisms</a>
+                    <a href="layout.html" class="nav-link">Layout</a>
+                    <a href="tokens.html" class="nav-link">Design Tokens</a>
+                    <a href="accessibility.html" class="nav-link">Accessibility</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-white py-12 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Design Atoms
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The fundamental building blocks of our design system. These are the smallest, indivisible elements that form the foundation of all our components.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Color Palette</h2>
+                <p class="text-lg text-gray-600">
+                    Our color system is designed for accessibility and health-focused applications, with clear semantic meanings.
+                </p>
+            </div>
+
+            <!-- Primary Colors -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Primary Colors</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-4">
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-50 mb-2" data-color="#f0fdf4"></div>
+                        <p class="text-sm font-mono text-gray-600">50</p>
+                        <p class="text-xs text-gray-500">#f0fdf4</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-100 mb-2" data-color="#dcfce7"></div>
+                        <p class="text-sm font-mono text-gray-600">100</p>
+                        <p class="text-xs text-gray-500">#dcfce7</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-200 mb-2" data-color="#bbf7d0"></div>
+                        <p class="text-sm font-mono text-gray-600">200</p>
+                        <p class="text-xs text-gray-500">#bbf7d0</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-300 mb-2" data-color="#86efac"></div>
+                        <p class="text-sm font-mono text-gray-600">300</p>
+                        <p class="text-xs text-gray-500">#86efac</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-400 mb-2" data-color="#4ade80"></div>
+                        <p class="text-sm font-mono text-gray-600">400</p>
+                        <p class="text-xs text-gray-500">#4ade80</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-500 mb-2" data-color="#22c55e"></div>
+                        <p class="text-sm font-mono text-gray-600">500</p>
+                        <p class="text-xs text-gray-500">#22c55e</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-600 mb-2" data-color="#16a34a"></div>
+                        <p class="text-sm font-mono text-gray-600">600</p>
+                        <p class="text-xs text-gray-500">#16a34a</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-700 mb-2" data-color="#15803d"></div>
+                        <p class="text-sm font-mono text-gray-600">700</p>
+                        <p class="text-xs text-gray-500">#15803d</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-800 mb-2" data-color="#166534"></div>
+                        <p class="text-sm font-mono text-gray-600">800</p>
+                        <p class="text-xs text-gray-500">#166534</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-primary-900 mb-2" data-color="#14532d"></div>
+                        <p class="text-sm font-mono text-gray-600">900</p>
+                        <p class="text-xs text-gray-500">#14532d</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Colors -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Secondary Colors</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-4">
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-50 mb-2" data-color="#eff6ff"></div>
+                        <p class="text-sm font-mono text-gray-600">50</p>
+                        <p class="text-xs text-gray-500">#eff6ff</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-100 mb-2" data-color="#dbeafe"></div>
+                        <p class="text-sm font-mono text-gray-600">100</p>
+                        <p class="text-xs text-gray-500">#dbeafe</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-200 mb-2" data-color="#bfdbfe"></div>
+                        <p class="text-sm font-mono text-gray-600">200</p>
+                        <p class="text-xs text-gray-500">#bfdbfe</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-300 mb-2" data-color="#93c5fd"></div>
+                        <p class="text-sm font-mono text-gray-600">300</p>
+                        <p class="text-xs text-gray-500">#93c5fd</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-400 mb-2" data-color="#60a5fa"></div>
+                        <p class="text-sm font-mono text-gray-600">400</p>
+                        <p class="text-xs text-gray-500">#60a5fa</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-500 mb-2" data-color="#3b82f6"></div>
+                        <p class="text-sm font-mono text-gray-600">500</p>
+                        <p class="text-xs text-gray-500">#3b82f6</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-600 mb-2" data-color="#2563eb"></div>
+                        <p class="text-sm font-mono text-gray-600">600</p>
+                        <p class="text-xs text-gray-500">#2563eb</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-700 mb-2" data-color="#1d4ed8"></div>
+                        <p class="text-sm font-mono text-gray-600">700</p>
+                        <p class="text-xs text-gray-500">#1d4ed8</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-800 mb-2" data-color="#1e40af"></div>
+                        <p class="text-sm font-mono text-gray-600">800</p>
+                        <p class="text-xs text-gray-500">#1e40af</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-hpb-secondary-900 mb-2" data-color="#1e3a8a"></div>
+                        <p class="text-sm font-mono text-gray-600">900</p>
+                        <p class="text-xs text-gray-500">#1e3a8a</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semantic Colors -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Semantic Colors</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="color-swatch bg-green-500 mb-3 mx-auto" data-color="#10b981"></div>
+                        <h4 class="font-semibold text-gray-900">Success</h4>
+                        <p class="text-sm text-gray-600">#10b981</p>
+                        <p class="text-xs text-gray-500 mt-1">Healthy, positive outcomes</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-red-500 mb-3 mx-auto" data-color="#ef4444"></div>
+                        <h4 class="font-semibold text-gray-900">Error</h4>
+                        <p class="text-sm text-gray-600">#ef4444</p>
+                        <p class="text-xs text-gray-500 mt-1">Critical health alerts</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-yellow-500 mb-3 mx-auto" data-color="#eab308"></div>
+                        <h4 class="font-semibold text-gray-900">Warning</h4>
+                        <p class="text-sm text-gray-600">#eab308</p>
+                        <p class="text-xs text-gray-500 mt-1">Caution, monitor closely</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-blue-500 mb-3 mx-auto" data-color="#3b82f6"></div>
+                        <h4 class="font-semibold text-gray-900">Info</h4>
+                        <p class="text-sm text-gray-600">#3b82f6</p>
+                        <p class="text-xs text-gray-500 mt-1">Informational content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Typography</h2>
+                <p class="text-lg text-gray-600">
+                    Our typography system uses Inter for its excellent readability and modern appearance, with JetBrains Mono for code.
+                </p>
+            </div>
+
+            <!-- Font Families -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Primary Font - Inter</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Light (300)</p>
+                            <p class="font-light text-2xl">The quick brown fox jumps</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Regular (400)</p>
+                            <p class="font-normal text-2xl">The quick brown fox jumps</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Medium (500)</p>
+                            <p class="font-medium text-2xl">The quick brown fox jumps</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Semibold (600)</p>
+                            <p class="font-semibold text-2xl">The quick brown fox jumps</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Bold (700)</p>
+                            <p class="font-bold text-2xl">The quick brown fox jumps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Monospace Font - JetBrains Mono</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Regular (400)</p>
+                            <p class="font-mono text-lg">const healthData = {}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Medium (500)</p>
+                            <p class="font-mono font-medium text-lg">function calculateBMI()</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Semibold (600)</p>
+                            <p class="font-mono font-semibold text-lg">// Health metrics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type Scale -->
+            <div class="card">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">Type Scale</h3>
+                <div class="space-y-6">
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h1 class="text-6xl font-bold text-gray-900">Display</h1>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-6xl / 3.75rem / 60px</p>
+                            <p>font-weight: 700</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h1 class="text-5xl font-bold text-gray-900">Heading 1</h1>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-5xl / 3rem / 48px</p>
+                            <p>font-weight: 700</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h2 class="text-4xl font-bold text-gray-900">Heading 2</h2>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-4xl / 2.25rem / 36px</p>
+                            <p>font-weight: 700</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h3 class="text-3xl font-semibold text-gray-900">Heading 3</h3>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-3xl / 1.875rem / 30px</p>
+                            <p>font-weight: 600</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h4 class="text-2xl font-semibold text-gray-900">Heading 4</h4>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-2xl / 1.5rem / 24px</p>
+                            <p>font-weight: 600</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h5 class="text-xl font-semibold text-gray-900">Heading 5</h5>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-xl / 1.25rem / 20px</p>
+                            <p>font-weight: 600</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <h6 class="text-lg font-semibold text-gray-900">Heading 6</h6>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-lg / 1.125rem / 18px</p>
+                            <p>font-weight: 600</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <p class="text-lg text-gray-900">Large Body</p>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-lg / 1.125rem / 18px</p>
+                            <p>font-weight: 400</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <p class="text-base text-gray-900">Body</p>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-base / 1rem / 16px</p>
+                            <p>font-weight: 400</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between border-b border-gray-200 pb-4">
+                        <p class="text-sm text-gray-900">Small</p>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-sm / 0.875rem / 14px</p>
+                            <p>font-weight: 400</p>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between">
+                        <p class="text-xs text-gray-900">Extra Small</p>
+                        <div class="text-right text-sm text-gray-600">
+                            <p>text-xs / 0.75rem / 12px</p>
+                            <p>font-weight: 400</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Icons Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Icons</h2>
+                <p class="text-lg text-gray-600">
+                    We use LineIcons for consistent, scalable iconography. Here are the most commonly used icons in health applications.
+                </p>
+            </div>
+
+            <!-- Health Icons -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-heart">
+                    <i class="lni-heart text-3xl text-red-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Heart</p>
+                    <p class="text-xs text-gray-500">lni-heart</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-pulse">
+                    <i class="lni-pulse text-3xl text-hpb-primary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Pulse</p>
+                    <p class="text-xs text-gray-500">lni-pulse</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-hospital">
+                    <i class="lni-hospital text-3xl text-hpb-secondary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Hospital</p>
+                    <p class="text-xs text-gray-500">lni-hospital</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-capsule">
+                    <i class="lni-capsule text-3xl text-orange-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Medicine</p>
+                    <p class="text-xs text-gray-500">lni-capsule</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-first-aid">
+                    <i class="lni-first-aid text-3xl text-red-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">First Aid</p>
+                    <p class="text-xs text-gray-500">lni-first-aid</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-stethoscope">
+                    <i class="lni-stethoscope text-3xl text-hpb-primary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Stethoscope</p>
+                    <p class="text-xs text-gray-500">lni-stethoscope</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-weight">
+                    <i class="lni-weight text-3xl text-purple-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Weight</p>
+                    <p class="text-xs text-gray-500">lni-weight</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-timer">
+                    <i class="lni-timer text-3xl text-blue-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Timer</p>
+                    <p class="text-xs text-gray-500">lni-timer</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-calendar">
+                    <i class="lni-calendar text-3xl text-hpb-secondary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Calendar</p>
+                    <p class="text-xs text-gray-500">lni-calendar</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-stats-up">
+                    <i class="lni-stats-up text-3xl text-green-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Stats Up</p>
+                    <p class="text-xs text-gray-500">lni-stats-up</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-warning">
+                    <i class="lni-warning text-3xl text-yellow-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Warning</p>
+                    <p class="text-xs text-gray-500">lni-warning</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-checkmark-circle">
+                    <i class="lni-checkmark-circle text-3xl text-green-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Success</p>
+                    <p class="text-xs text-gray-500">lni-checkmark-circle</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-user">
+                    <i class="lni-user text-3xl text-gray-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">User</p>
+                    <p class="text-xs text-gray-500">lni-user</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-phone">
+                    <i class="lni-phone text-3xl text-hpb-primary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Phone</p>
+                    <p class="text-xs text-gray-500">lni-phone</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-envelope">
+                    <i class="lni-envelope text-3xl text-hpb-secondary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Email</p>
+                    <p class="text-xs text-gray-500">lni-envelope</p>
+                </div>
+                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" data-copy="lni-map-marker">
+                    <i class="lni-map-marker text-3xl text-red-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-900">Location</p>
+                    <p class="text-xs text-gray-500">lni-map-marker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Spacing System</h2>
+                <p class="text-lg text-gray-600">
+                    Consistent spacing creates visual rhythm and hierarchy. Our spacing scale is based on a 4px grid system.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-1 h-1 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">xs</span>
+                            <span class="text-gray-600">0.25rem / 4px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-1"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-2 h-2 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">sm</span>
+                            <span class="text-gray-600">0.5rem / 8px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-2"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-4 h-4 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">md</span>
+                            <span class="text-gray-600">1rem / 16px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-4"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-6 h-6 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">lg</span>
+                            <span class="text-gray-600">1.5rem / 24px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-6"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">xl</span>
+                            <span class="text-gray-600">2rem / 32px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-8"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">2xl</span>
+                            <span class="text-gray-600">3rem / 48px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-12"></div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-hpb-primary-500"></div>
+                            <span class="font-mono text-sm">3xl</span>
+                            <span class="text-gray-600">4rem / 64px</span>
+                        </div>
+                        <div class="bg-hpb-primary-500 h-4 w-16"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/hpblogo-reverse.png" alt="HPB Logo" class="h-8 w-auto">
+                        <div>
+                            <h3 class="text-lg font-bold">HPB Design System</h3>
+                            <p class="text-sm text-gray-400">Modern Health Design</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Building accessible and beautiful health applications that promote wellness across Singapore.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Design System</h4>
+                    <ul class="space-y-2">
+                        <li><a href="atoms.html" class="text-gray-400 hover:text-white transition-colors">Atoms</a></li>
+                        <li><a href="molecules.html" class="text-gray-400 hover:text-white transition-colors">Molecules</a></li>
+                        <li><a href="organisms.html" class="text-gray-400 hover:text-white transition-colors">Organisms</a></li>
+                        <li><a href="layout.html" class="text-gray-400 hover:text-white transition-colors">Layout</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="tokens.html" class="text-gray-400 hover:text-white transition-colors">Design Tokens</a></li>
+                        <li><a href="accessibility.html" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+                        <li><a href="resources.html" class="text-gray-400 hover:text-white transition-colors">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Health Promotion Board. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

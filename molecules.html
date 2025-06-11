@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecules - HPB Design System</title>
+    <meta name="description" content="Molecular components combining atoms into functional UI elements for health applications.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- LineIcons CDN -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hpb-primary': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        'hpb-secondary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        }
+                    },
+                    fontFamily: {
+                        'primary': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/health-promotion-board-logo-hd.png" alt="HPB Logo" class="h-8 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">HPB Design System</h1>
+                        <p class="text-xs text-gray-500">Modern Health Design</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link">Overview</a>
+                    <a href="atoms.html" class="nav-link">Atoms</a>
+                    <a href="molecules.html" class="nav-link active">Molecules</a>
+                    <a href="organisms.html" class="nav-link">Organisms</a>
+                    <a href="layout.html" class="nav-link">Layout</a>
+                    <a href="tokens.html" class="nav-link">Design Tokens</a>
+                    <a href="accessibility.html" class="nav-link">Accessibility</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i class="lni-menu text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="nav-link">Overview</a>
+                    <a href="atoms.html" class="nav-link">Atoms</a>
+                    <a href="molecules.html" class="nav-link active">Molecules</a>
+                    <a href="organisms.html" class="nav-link">Organisms</a>
+                    <a href="layout.html" class="nav-link">Layout</a>
+                    <a href="tokens.html" class="nav-link">Design Tokens</a>
+                    <a href="accessibility.html" class="nav-link">Accessibility</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-white py-12 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Design Molecules
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Functional UI components created by combining atoms. These molecules serve specific purposes and can be reused across different contexts in health applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Buttons</h2>
+                <p class="text-lg text-gray-600">
+                    Interactive elements that trigger actions. Each button variant serves a specific purpose in the user interface.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Primary Buttons -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Primary Buttons</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <button class="btn-primary demo-button">
+                                <i class="lni-heart"></i>
+                                Primary Action
+                            </button>
+                            <button class="btn-primary demo-button" disabled>
+                                <i class="lni-heart"></i>
+                                Disabled State
+                            </button>
+                            <button class="btn-primary demo-button w-full">
+                                <i class="lni-download"></i>
+                                Full Width Button
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;button class="btn-primary"&gt;
+  &lt;i class="lni-heart"&gt;&lt;/i&gt;
+  Primary Action
+&lt;/button&gt;
+
+&lt;button class="btn-primary" disabled&gt;
+  &lt;i class="lni-heart"&gt;&lt;/i&gt;
+  Disabled State
+&lt;/button&gt;
+
+&lt;button class="btn-primary w-full"&gt;
+  &lt;i class="lni-download"&gt;&lt;/i&gt;
+  Full Width Button
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <button class="copy-btn mt-2 px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors" data-copy='<button class="btn-primary"><i class="lni-heart"></i>Primary Action</button>'>
+                            <i class="lni-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Secondary Buttons -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Secondary Buttons</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <button class="btn-secondary demo-button">
+                                <i class="lni-download"></i>
+                                Secondary Action
+                            </button>
+                            <button class="btn-secondary demo-button" disabled>
+                                <i class="lni-download"></i>
+                                Disabled State
+                            </button>
+                            <button class="btn-secondary demo-button w-full">
+                                <i class="lni-eye"></i>
+                                Full Width Button
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;button class="btn-secondary"&gt;
+  &lt;i class="lni-download"&gt;&lt;/i&gt;
+  Secondary Action
+&lt;/button&gt;
+
+&lt;button class="btn-secondary" disabled&gt;
+  &lt;i class="lni-download"&gt;&lt;/i&gt;
+  Disabled State
+&lt;/button&gt;
+
+&lt;button class="btn-secondary w-full"&gt;
+  &lt;i class="lni-eye"&gt;&lt;/i&gt;
+  Full Width Button
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <button class="copy-btn mt-2 px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors" data-copy='<button class="btn-secondary"><i class="lni-download"></i>Secondary Action</button>'>
+                            <i class="lni-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Danger Buttons -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Danger Buttons</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all demo-button">
+                                <i class="lni-warning"></i>
+                                Emergency Action
+                            </button>
+                            <button class="bg-red-100 text-red-600 border-2 border-red-200 hover:bg-red-50 px-6 py-3 rounded-lg font-semibold transition-all demo-button">
+                                <i class="lni-trash"></i>
+                                Delete Item
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;button class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"&gt;
+  &lt;i class="lni-warning"&gt;&lt;/i&gt;
+  Emergency Action
+&lt;/button&gt;
+
+&lt;button class="bg-red-100 text-red-600 border-2 border-red-200 hover:bg-red-50 px-6 py-3 rounded-lg font-semibold transition-all"&gt;
+  &lt;i class="lni-trash"&gt;&lt;/i&gt;
+  Delete Item
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Buttons -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Icon Buttons</h3>
+                    
+                    <div class="component-preview">
+                        <div class="flex space-x-4">
+                            <button class="w-12 h-12 bg-hpb-primary-500 hover:bg-hpb-primary-600 text-white rounded-lg transition-all demo-button">
+                                <i class="lni-heart text-lg"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-white border-2 border-gray-200 hover:border-hpb-primary-400 text-gray-600 hover:text-hpb-primary-600 rounded-lg transition-all demo-button">
+                                <i class="lni-bookmark text-lg"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all demo-button">
+                                <i class="lni-warning text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;button class="w-12 h-12 bg-hpb-primary-500 hover:bg-hpb-primary-600 text-white rounded-lg transition-all"&gt;
+  &lt;i class="lni-heart text-lg"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;button class="w-12 h-12 bg-white border-2 border-gray-200 hover:border-hpb-primary-400 text-gray-600 hover:text-hpb-primary-600 rounded-lg transition-all"&gt;
+  &lt;i class="lni-bookmark text-lg"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Elements Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Form Elements</h2>
+                <p class="text-lg text-gray-600">
+                    Input components for collecting health data and user information with proper validation states.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Text Inputs -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Text Inputs</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Patient Name</label>
+                                <input type="text" placeholder="Enter patient name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hpb-primary-500 focus:border-transparent transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Blood Pressure (Error State)</label>
+                                <input type="text" placeholder="120/80" class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                                <p class="text-sm text-red-600 mt-1">Please enter a valid blood pressure reading</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Weight (Success State)</label>
+                                <input type="text" value="70 kg" class="w-full px-4 py-3 border-2 border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
+                                <p class="text-sm text-green-600 mt-1">Valid weight recorded</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;div&gt;
+  &lt;label class="block text-sm font-medium text-gray-700 mb-2"&gt;Patient Name&lt;/label&gt;
+  &lt;input type="text" placeholder="Enter patient name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hpb-primary-500 focus:border-transparent transition-all"&gt;
+&lt;/div&gt;
+
+&lt;!-- Error State --&gt;
+&lt;div&gt;
+  &lt;label class="block text-sm font-medium text-gray-700 mb-2"&gt;Blood Pressure&lt;/label&gt;
+  &lt;input type="text" class="w-full px-4 py-3 border-2 border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"&gt;
+  &lt;p class="text-sm text-red-600 mt-1"&gt;Please enter a valid reading&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Dropdowns -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Select Dropdowns</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Health Category</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hpb-primary-500 focus:border-transparent transition-all">
+                                    <option>Select category</option>
+                                    <option>Blood Pressure</option>
+                                    <option>Weight Management</option>
+                                    <option>Heart Rate</option>
+                                    <option>Blood Sugar</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Priority Level</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hpb-primary-500 focus:border-transparent transition-all">
+                                    <option>Low Priority</option>
+                                    <option>Medium Priority</option>
+                                    <option>High Priority</option>
+                                    <option>Critical</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;div&gt;
+  &lt;label class="block text-sm font-medium text-gray-700 mb-2"&gt;Health Category&lt;/label&gt;
+  &lt;select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hpb-primary-500 focus:border-transparent transition-all"&gt;
+    &lt;option&gt;Select category&lt;/option&gt;
+    &lt;option&gt;Blood Pressure&lt;/option&gt;
+    &lt;option&gt;Weight Management&lt;/option&gt;
+    &lt;option&gt;Heart Rate&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkboxes and Radio Buttons -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Checkboxes & Radio Buttons</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-3">Symptoms (Multiple Selection)</h4>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="w-4 h-4 text-hpb-primary-600 border-gray-300 rounded focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Headache</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" checked class="w-4 h-4 text-hpb-primary-600 border-gray-300 rounded focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Fatigue</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="w-4 h-4 text-hpb-primary-600 border-gray-300 rounded focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Nausea</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-3">Pain Level (Single Selection)</h4>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="pain" class="w-4 h-4 text-hpb-primary-600 border-gray-300 focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Mild (1-3)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="pain" checked class="w-4 h-4 text-hpb-primary-600 border-gray-300 focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Moderate (4-6)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="pain" class="w-4 h-4 text-hpb-primary-600 border-gray-300 focus:ring-hpb-primary-500">
+                                        <span class="ml-2 text-sm text-gray-700">Severe (7-10)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toggle Switches -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Toggle Switches</h3>
+                    
+                    <div class="component-preview">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Email Notifications</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-hpb-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-hpb-primary-600"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">SMS Alerts</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-hpb-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-hpb-primary-600"></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Data Sharing</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-hpb-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-hpb-primary-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Cards Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Health Metric Cards</h2>
+                <p class="text-lg text-gray-600">
+                    Specialized cards for displaying health data with appropriate visual indicators and status colors.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Healthy Status Card -->
+                <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-heart text-green-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-green-800">Healthy Range</span>
+                        </div>
+                        <i class="lni-checkmark-circle text-green-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-green-900">120/80</p>
+                        <p class="text-sm text-green-700">mmHg</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-green-600">Blood Pressure</span>
+                        <span class="text-xs text-green-600">Last updated: 2h ago</span>
+                    </div>
+                </div>
+
+                <!-- Warning Status Card -->
+                <div class="bg-orange-50 border-2 border-orange-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-warning text-orange-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-orange-800">Monitor Closely</span>
+                        </div>
+                        <i class="lni-eye text-orange-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-orange-900">8.2%</p>
+                        <p class="text-sm text-orange-700">HbA1c</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-orange-600">Blood Sugar</span>
+                        <span class="text-xs text-orange-600">Last updated: 1d ago</span>
+                    </div>
+                </div>
+
+                <!-- Critical Status Card -->
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-warning text-red-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-red-800">Critical Alert</span>
+                        </div>
+                        <i class="lni-alarm text-red-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-red-900">180/110</p>
+                        <p class="text-sm text-red-700">mmHg</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-red-600">Blood Pressure</span>
+                        <span class="text-xs text-red-600">Last updated: 30m ago</span>
+                    </div>
+                </div>
+
+                <!-- BMI Card -->
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-weight text-blue-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-blue-800">Normal Weight</span>
+                        </div>
+                        <i class="lni-checkmark-circle text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-blue-900">22.5</p>
+                        <p class="text-sm text-blue-700">BMI</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-blue-600">Body Mass Index</span>
+                        <span class="text-xs text-blue-600">Last updated: 3h ago</span>
+                    </div>
+                </div>
+
+                <!-- Heart Rate Card -->
+                <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-pulse text-purple-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-purple-800">Resting Rate</span>
+                        </div>
+                        <i class="lni-heart text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-purple-900">72</p>
+                        <p class="text-sm text-purple-700">BPM</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-purple-600">Heart Rate</span>
+                        <span class="text-xs text-purple-600">Last updated: 1h ago</span>
+                    </div>
+                </div>
+
+                <!-- Steps Card -->
+                <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="lni-direction text-green-600 text-xl"></i>
+                            <span class="text-sm font-semibold text-green-800">Daily Goal</span>
+                        </div>
+                        <i class="lni-target text-green-600 text-xl"></i>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-3xl font-bold text-green-900">8,547</p>
+                        <p class="text-sm text-green-700">steps</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-green-600">85% of goal</span>
+                        <span class="text-xs text-green-600">Today</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="text-sm font-semibold text-gray-900 mb-2">HTML Code Example</h4>
+                <div class="code-block">
+                    <pre><code>&lt;div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all"&gt;
+  &lt;div class="flex items-center justify-between mb-4"&gt;
+    &lt;div class="flex items-center space-x-2"&gt;
+      &lt;i class="lni-heart text-green-600 text-xl"&gt;&lt;/i&gt;
+      &lt;span class="text-sm font-semibold text-green-800"&gt;Healthy Range&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;i class="lni-checkmark-circle text-green-600 text-xl"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-2"&gt;
+    &lt;p class="text-3xl font-bold text-green-900"&gt;120/80&lt;/p&gt;
+    &lt;p class="text-sm text-green-700"&gt;mmHg&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;span class="text-xs text-green-600"&gt;Blood Pressure&lt;/span&gt;
+    &lt;span class="text-xs text-green-600"&gt;Last updated: 2h ago&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Alert Messages</h2>
+                <p class="text-lg text-gray-600">
+                    Contextual feedback messages for different scenarios in health applications.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Success Alert -->
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="lni-checkmark-circle text-green-400 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-green-800">
+                                Health data successfully recorded
+                            </p>
+                            <p class="mt-1 text-sm text-green-700">
+                                Your blood pressure reading has been saved and is within normal range.
+                            </p>
+                        </div>
+                        <div class="ml-auto pl-3">
+                            <button class="text-green-400 hover:text-green-600">
+                                <i class="lni-close text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Alert -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="lni-warning text-yellow-400 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-yellow-800">
+                                Medication reminder
+                            </p>
+                            <p class="mt-1 text-sm text-yellow-700">
+                                Don't forget to take your evening medication in 30 minutes.
+                            </p>
+                        </div>
+                        <div class="ml-auto pl-3">
+                            <button class="text-yellow-400 hover:text-yellow-600">
+                                <i class="lni-close text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="lni-cross-circle text-red-400 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-red-800">
+                                Critical health alert
+                            </p>
+                            <p class="mt-1 text-sm text-red-700">
+                                Your blood pressure reading is dangerously high. Please contact your healthcare provider immediately.
+                            </p>
+                        </div>
+                        <div class="ml-auto pl-3">
+                            <button class="text-red-400 hover:text-red-600">
+                                <i class="lni-close text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Alert -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="lni-information text-blue-400 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-blue-800">
+                                Health tip of the day
+                            </p>
+                            <p class="mt-1 text-sm text-blue-700">
+                                Regular exercise for 30 minutes daily can significantly improve your cardiovascular health.
+                            </p>
+                        </div>
+                        <div class="ml-auto pl-3">
+                            <button class="text-blue-400 hover:text-blue-600">
+                                <i class="lni-close text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/hpblogo-reverse.png" alt="HPB Logo" class="h-8 w-auto">
+                        <div>
+                            <h3 class="text-lg font-bold">HPB Design System</h3>
+                            <p class="text-sm text-gray-400">Modern Health Design</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Building accessible and beautiful health applications that promote wellness across Singapore.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Design System</h4>
+                    <ul class="space-y-2">
+                        <li><a href="atoms.html" class="text-gray-400 hover:text-white transition-colors">Atoms</a></li>
+                        <li><a href="molecules.html" class="text-gray-400 hover:text-white transition-colors">Molecules</a></li>
+                        <li><a href="organisms.html" class="text-gray-400 hover:text-white transition-colors">Organisms</a></li>
+                        <li><a href="layout.html" class="text-gray-400 hover:text-white transition-colors">Layout</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="tokens.html" class="text-gray-400 hover:text-white transition-colors">Design Tokens</a></li>
+                        <li><a href="accessibility.html" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+                        <li><a href="resources.html" class="text-gray-400 hover:text-white transition-colors">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Health Promotion Board. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
