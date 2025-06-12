@@ -32,7 +32,7 @@ function initCopyToClipboard() {
       navigator.clipboard.writeText(text).then(() => {
         // Show feedback
         const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="lni-checkmark"></i> Copied!';
+        btn.innerHTML = '<i class="lni lni-checkmark"></i> Copied!';
         btn.classList.add('bg-green-500', 'text-white');
         
         setTimeout(() => {
